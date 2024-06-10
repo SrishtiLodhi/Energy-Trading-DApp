@@ -17,7 +17,7 @@ Thus PowerX allows peer-2-peer energy sharing between nodes (houses), in turn re
 
 ## FrontEnd Deployment
 
-The Decentralized Energy Trading Platform is deployed at [powerX-UI](energy-trading-dapp.vercel.app).
+The Decentralized Energy Trading Platform is deployed at [powerX-UI](https://energy-trading-dapp.vercel.app/).
 
 ## Smart Contract
 
