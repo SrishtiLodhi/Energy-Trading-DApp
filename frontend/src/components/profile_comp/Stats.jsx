@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 
 const Stats=()=>{
 
-const API_BASE = "http://localhost:5500";
+const API_BASE = "https://energy-trading-dapp.onrender.com";
   
   const [buy, setBuy] = useState(0);
   const [sell, setSell] = useState(0);

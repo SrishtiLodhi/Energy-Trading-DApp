@@ -17,7 +17,7 @@ const RightN=()=>{
 
     const { currentUser} = useAuth()
 
-  const API_BASE = "http://localhost:5500";
+  const API_BASE = "https://energy-trading-dapp.onrender.com";
     const [wallets, setWallets] = useState([])
     var selected = []
 

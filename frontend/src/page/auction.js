@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Auction() {
     
     const [data, setData] = useState([]);
-  const API_BASE = "http://localhost:5500";
+  const API_BASE = "https://energy-trading-dapp.onrender.com";
 
     const [smShow, setSmShow] = useState(false);
 

@@ -5,7 +5,7 @@ const ConnectN=()=>{
 
     const [wallets, setWallets] = useState([]);
 
-  const API_BASE = "http://localhost:5500";
+  const API_BASE = "https://energy-trading-dapp.onrender.com";
 
     // console.log("inside connected nodes")
 

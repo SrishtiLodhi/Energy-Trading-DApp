@@ -23,7 +23,7 @@ function Example(props) {
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-const API_BASE = "http://localhost:5500";
+const API_BASE = "https://energy-trading-dapp.onrender.com";
 
   const handleClose = () => {
     setShowError(false);

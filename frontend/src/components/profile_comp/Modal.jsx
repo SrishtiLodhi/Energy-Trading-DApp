@@ -17,7 +17,7 @@ function BidModal(props) {
   const Pkey = `0x${PK}`;
   const signer = new ethers.Wallet(Pkey);
 
-const API_BASE = "http://localhost:5500";
+const API_BASE = "https://energy-trading-dapp.onrender.com";
 
   const [energy, setEnergy] = useState();
   const [price, setPrice] = useState();
