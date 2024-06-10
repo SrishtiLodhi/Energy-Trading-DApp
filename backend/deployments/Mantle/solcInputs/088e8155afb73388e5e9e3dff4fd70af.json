@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/powerX.sol": {
+      "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.7.0 <0.9.0;\r\n\r\ncontract powerx{\r\n    address payable public /* immutable */ i_owner;\r\n\r\n    constructor() {\r\n        i_owner = payable(msg.sender);\r\n    }\r\n\r\n    // schema for bids\r\n    struct bid{\r\n        uint256 quantity;\r\n        uint256 unit_price;\r\n        address payable bidder;\r\n        uint256 expiry;\r\n    }\r\n    // schema for transactions\r\n    struct transaction{\r\n        uint256 service_charge;\r\n        uint256 energy_cost;\r\n        uint256 total_cost;\r\n        uint256 quantity;\r\n        uint256 auctioned_bid;\r\n        address payable buyer;\r\n    }\r\n\r\n    // schema for service charge\r\n    struct service_provider{\r\n        uint service_charge;\r\n        address payable node;\r\n    }\r\n\r\n    // adjacency list for nodes graph connections\r\n    mapping(address => address[]) public nodes_adj_list;\r\n    // checker if a node exists in the network \r\n    mapping(address => bool) private nodes;\r\n    // list of all bids\r\n    bid[] public bids;\r\n    // list of all executed transactions\r\n    transaction[] public transactions;\r\n\r\n    // function to get length of bids array\r\n    function get_bid_length() public view returns (uint256 length) {\r\n        return bids.length;\r\n    }\r\n\r\n    // function to get length of transactions array \r\n    function get_transactions_length() public view returns (uint256) {\r\n        return transactions.length;\r\n    }\r\n\r\n    // function to get the connected nodes to a node \r\n    function get_node_by_address(address val) public view returns (address[] memory){\r\n        require (nodes[val] == true);\r\n        return nodes_adj_list[val];\r\n    }\r\n\r\n    // function to add a node \r\n    function add_node(address val, address[] memory connected_nodes) public {\r\n        for(uint i=0;i<connected_nodes.length;i++){\r\n            require(nodes[connected_nodes[i]] == true);\r\n        }\r\n        nodes_adj_list[val] = connected_nodes;\r\n        nodes[val] = true;\r\n        for(uint i=0;i<connected_nodes.length;i++){\r\n            nodes_adj_list[connected_nodes[i]].push(val);\r\n        }\r\n    }\r\n\r\n    // function to add a new connection between two existing nodes\r\n    function add_connection(address val1, address val2) public {\r\n        require(nodes[val1] == true);\r\n        require(nodes[val2] == true);\r\n        nodes_adj_list[val1].push(val2);\r\n        nodes_adj_list[val2].push(val1);\r\n    }\r\n\r\n    // function to create a bid\r\n    function create_bid(uint256 qty, uint256 price, address payable bidder, uint expiry) public {\r\n        require(nodes[bidder] == true);\r\n        bids.push(bid(qty, price, bidder, expiry));\r\n    }\r\n\r\n    // send eth function\r\n    // TODO REMOVE PUBLIC\r\n    function sendViaCall(address payable _to, uint256 value) public payable {\r\n        // Call returns a boolean value indicating success or failure.\r\n        // This is the current recommended method to use.\r\n        (bool sent, bytes memory data) = _to.call{value: value}(\"\");\r\n        require(sent, \"Failed to send Ether\");\r\n    }\r\n\r\n    // function to execute a transaction\r\n    function execute_transaction(uint256 qty, address payable buyer, uint256 bid_id, service_provider[] memory service_providers) public payable {\r\n        require(nodes[buyer] == true);\r\n        require(bids[bid_id].quantity >= qty);\r\n        require(bids[bid_id].expiry >= block.timestamp);\r\n        uint256 service = 0;\r\n        for(uint256 i=0;i<service_providers.length;i++){\r\n            service += service_providers[i].service_charge;\r\n        }\r\n        uint256 energy_cost = qty * bids[bid_id].unit_price;\r\n        require(msg.value >= service + energy_cost);\r\n        sendViaCall(bids[bid_id].bidder, energy_cost);\r\n        for(uint256 i=0;i<service_providers.length;i++){\r\n            sendViaCall(service_providers[i].node, service_providers[i].service_charge);\r\n        }\r\n        bids[bid_id].quantity -= qty;\r\n        transactions.push(transaction(service, energy_cost, service + energy_cost, qty, bid_id, buyer));\r\n    }\r\n\r\n    function withdraw_profit() public payable {\r\n        require (msg.sender == i_owner);\r\n        sendViaCall(i_owner, address(this).balance);\r\n    }\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

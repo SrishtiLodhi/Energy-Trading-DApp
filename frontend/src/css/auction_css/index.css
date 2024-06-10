@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body_A{
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+.mnu_A{
+    padding: 13px;
+    background-color: #1f054f4e;
+    display: flex;
+    justify-content: space-between;
+    /* font-family: 'Roboto Mono', monospace; */
+    background-color: black;
+}
+
+.logout{
+    background-color: white;
+    border: none;
+    color: #5d32ab;
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    transform: scale(0.8);
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.logo_A , .Home_A , .Explore_A{
+    cursor: pointer;
+}
+
+.menu{
+    padding-left: 0;
+    height: 6vh;
+    width: 28%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.hello_A{
+    margin-bottom: 2%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.table_A{
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+}
+
+th{
+    border-bottom: 1px solid white;
+    padding: 4px;
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+}
+
+td{
+    text-align: center;
+    padding: 4px;
+    
+}
+.tab_A{
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+}
+
+.thead_A{
+    color: #ede734;
+}
+.table_data_A{
+    padding-top: 30px;
+}
+.top_auctions{
+    padding: 30px ;
+    font-size: larger;
+    font-weight: 200;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inconsolata', monospace;
+}
+
+.top3_A{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+.mid_A{
+    height: auto;
+}
+.MyCard{
+    background-color: black;
+    color: white;
+    border-radius: 21px;
+    padding: 0px 11px 0px 24px;
+    height: 19.4rem;
+    width: 27rem;
+}
+.MyCard:hover{
+    transform: scale(1);
+}
+.amount_energy, .curr_bid{
+    font-size: 25px;
+}
+
+.hosted_by{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 15%;
+}
+.energy_A{
+    display: flex;
+    align-items: center;
+}
+
+.energy_image img{
+    height: 40px;
+    margin-left: 5px;
+}
+.current_bid_A{
+    display: flex;
+    align-items: center;
+}
+.remaining{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9px;
+}
+
+.back_auction_A{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.MyCard button:hover{
+    transform: scale(1);
+}
+
+.Bid_A:hover{
+    background: linear-gradient(111.7deg, rgb(229, 183, 18) 2.4%, rgb(185, 68, 78) 28.3%, rgb(168, 68, 133) 46.2%, rgb(26, 145, 158) 79.4%, rgb(18, 125, 75) 100.2%);
+    color: #e6e3e3;
+}
+.Bid_A{
+    background: linear-gradient(111.7deg, rgb(251, 198, 6) 2.4%, rgb(224, 82, 95) 28.3%, rgb(194, 78, 154) 46.2%, rgb(32, 173, 190) 79.4%, rgb(22, 158, 95) 100.2%);
+    color: #ffffff;
+    padding: 7px 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 12px;
+}
+
+.bottom_A{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    background-color: #121212;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    color: white;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.wallet_A{
+    font-size: 15px;
+    background: #ffdc83;
+    border-radius: 11px;
+    width: 99%;
+    text-align: center;
+    font-weight: 500;
+    margin: auto;
+    margin-bottom: 18px;
+    color: black;
+    margin-top: 3px;
+}
+.by_tag_A{
+    font-size: 20px;
+}
+.ongoing_A{
+    width: 98%;
+    margin: auto;
+}
+
+.color_card_energy_A{
+    color: rgb(232 183 92);
+}
+
+.color_card_price_A{
+    color: rgb(69 116 255);
+}
+
+.auctions_head_A{
+    font-size: 2rem;
+    font-family: 'Montserrat';
+    font-weight: 450;
+}
+
+.back_text_decor_A{
+    background: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
+    padding: 12px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 3px #ac32e4, 0px 0px 7px 5px #4801ff;
+}
+
+.ongoing_img_A{
+    height: 4rem;
+    width: 4rem;
+    margin: auto;
+    margin-top: 8px;
+}
+
+.top_head_A{
+    font-size: 3.4rem;
+}
+@media screen and (max-width: 732px) {
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .mnu_A{
+        padding-left: 1px;
+    }
+    .menu{
+        width: 49%;
+    }
+    
+    .top3_A{
+        display: block;
+        margin-bottom: 29px;
+    }
+    .MyCard{
+        width: 96%;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+    .hello_A{
+        margin-bottom: 6%;
+    }
+
+    .energy_A{
+        font-size: larger;
+    }
+    .hosted_by{
+        font-size: larger;
+    }
+
+    .current_bid_A{
+        font-size: larger;
+    }
+
+    .top_auctions{
+        padding: 10px;
+    }
+    .top_head_A{
+        font-size: 48px;
+    }
+    .table_A{
+        overflow-x: scroll;
+    }
+    .tab_A{
+        overflow-x: scroll;
+    }
+}
+

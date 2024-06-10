@@ -1,0 +1,2 @@
+contract_address_polygon = 0x39dACcD0e312bE6316E70A9a52Be786bF5288C4E
+contract_address_mantle = 0xa27EC27dFd18f6F48449E6A5997b16672b10dBB3

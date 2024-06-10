@@ -1,0 +1,10 @@
+.input_box_a{
+    padding: 10px;
+    border: 2px solid #8a44ff8c;
+    border-radius: 12px;
+    width: 25%;
+}
+
+.modal-body{
+    overflow-wrap: break-word;
+}
