@@ -1,5 +1,3 @@
-## About PowerX - Decentralized Energy Trading Platform
-
 PowerX is a Peer-2-Peer Energy trading DApp built on polygon blockchain, that facilitates sharing of locally generated electricity. This platform leverages blockchain technology to create a transparent and efficient marketplace for energy exchange.
 
 ## The problem PowerX solves
